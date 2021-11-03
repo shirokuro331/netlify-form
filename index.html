@@ -20,12 +20,6 @@
   </script>
 
   <style>
-#input_plural {
-}
- 
-#input_plural input.form-control {
-    color: #ccc;
-}
  
 #input_plural input.pluralBtn {
     border: 1px solid #ccc;
@@ -39,9 +33,12 @@
 </head>
 <body>
 
-  
-
-  <form name="contact" method="POST" data-netlify="true">
+  <form 
+    action="thanks.html"
+    method="post"
+    name="form01"
+    netlify-honeypot="bot-field" 
+    data-netlify="true">
     <p>
       <label>Your Name: <input type="text" name="name" /></label>   
     </p>
