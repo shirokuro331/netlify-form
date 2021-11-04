@@ -6,64 +6,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  $('#form').validate({
-    // Validationルール
-    rules: {
-        name: {
-          required: true, 
-        },
-        gender: {
-          required: true, 
-        },
-        select: {
-          required: true, 
-        },
-    },
- 
-    // エラーメッセージ
-    messages: {
-        name: {
-            required: '名前を入力してください',
-        },
-        gender: {
-            required: '性別を選択してください',
-        },
-        select: {
-            required: 'セレクトを選択してください',
-        },
-    },
- 
-    // エラーメッセージ出力箇所
-    errorPlacement: function(error, element){
-        var name = element.attr('name');
-        error.appendTo($('.is-error-'+name));
-    },
- 
-    errorElement: "span",
-    errorClass: "is-error",
-});
- 
-// selectボックスを未選択にする
-var obj = document.getElementById("select_id");
-obj.selectedIndex = -1;
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
 
-  </script>
+<script>
+$(function(){
+	$('#form').validate({
+		rules: {
+			name: {
+				required: true,
+			},
+			email: {
+				required: true,
+			},
+			tel: {
+				required: true,
+			},
+		},
+	})
+})
+</script>
 
 </head>
 <body>
+
+  <form action="thanks.html" method="post" name="form01" netlify-honeypot="bot-field" id="form" data-netlify="true">
+	<div>
+		<div>
+			<p>お名前</p>
+			<input type="text" name="name">
+		</div>
+		<div>
+			<p>メールアドレス</p>
+			<input type="email" name="email">
+		</div>
+		<div>
+			<p>電話番号</p>
+			<input type="tel" name="tel">
+		</div>
+	</div>
+	<button type="submit">送信する</button>
+</form>
+
+
+<!-- 
+  
   <form action="" method="post" name="form01" netlify-honeypot="bot-field" id="form" data-netlify="true">
-    <!-- 名前 -->
+    
     <p class="is-error-name"></p>
     name : <input type="text" name="name"> 
    
-    <!-- ラジオボタン -->
+    
     <p class="is-error-gender"></p>gender : 
     <input type="radio" name="gender" value="male">male
     <input type="radio" name="gender" value="female">female
    
-    <!-- セレクトボックス -->
+    
     <p class="is-error-select"></p>select : 
     <select name="select" id="select_id">
         <option value="item1">item1</option>
@@ -72,7 +70,7 @@ obj.selectedIndex = -1;
     </select><br>
    
     <input type="submit">
-  </form>
+  </form> -->
 
 
 
