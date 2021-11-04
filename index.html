@@ -17,6 +17,48 @@
           target.remove();
       }
   });
+
+  $('#form').validate({
+    // Validationルール
+    rules: {
+        name: {
+          required: true, 
+        },
+        email: {
+          required: true, 
+          email: true,
+        },
+    },
+ 
+    // エラーメッセージ
+    messages: {
+        name: {
+            required: '名前を入力してください',
+        },
+        email: {
+            required: 'メールアドレスを入力してください',
+            email: 'メールアドレスの形式で入力してください',
+        },
+    },
+ 
+    // エラーメッセージ出力箇所
+    errorPlacement: function(error, element){
+        var name = element.attr('name');
+        error.appendTo($('.is-error-'+name));
+    },
+ 
+    errorElement: "span",
+    errorClass: "is-error",
+});
+ 
+// selectボックスを未選択にする
+var obj = document.getElementById("select_id");
+obj.selectedIndex = -1;
+
+
+
+
+
   </script>
 
   <style>
@@ -38,12 +80,14 @@
     method="post"
     name="form01"
     netlify-honeypot="bot-field" 
-    data-netlify="true">
+    data-netlify="true" id="form">
     <p>
-      <label>Your Name: <input type="text" name="name" /></label>   
+      <label>Your Name: <input type="text" name="name" /></label>  
+      <p class="is-error-name"></p> 
     </p>
     <p>
       <label>Your Email: <input type="email" name="email" /></label>
+      <p class="is-error-email"></p>
     </p>
     <p>
       <label>quantity: 
