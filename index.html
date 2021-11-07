@@ -9,23 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
 
-<script>
-$(function(){
-	$('#form').validate({
-		rules: {
-			name: {
-				required: true,
-			},
-			email: {
-				required: true,
-			},
-			tel: {
-				required: true,
-			},
-		},
-	})
-})
-</script>
+  <script src="form.js"></script>
 
 </head>
 <body>
@@ -34,45 +18,124 @@ $(function(){
 	<div>
 		<div>
 			<p>お名前</p>
-			<input type="text" name="name">
+			<input type="text" name="shipperCompany">
 		</div>
 		<div>
-			<p>メールアドレス</p>
-			<input type="email" name="email">
+			<p>担当者名</p>
+			<input type="text" name="shipperName">
 		</div>
-		<div>
+    <div>
+			<p>住所</p>
+			<input type="text" name="shipperAddress">
+		</div>
+    <div>
+			<p>郵便番号</p>
+			<input type="text" name="shipperZip">
+		</div>
+    <div>
 			<p>電話番号</p>
-			<input type="tel" name="tel">
+			<input type="tel" name="shipperTel">
 		</div>
+    <div>
+			<p>メールアドレス</p>
+			<input type="email" name="shipperEmail">
+		</div>
+  </div>
+
+  <div>
+    <h2>送り先情報</h2>
+    <div>
+			<p>会社名</p>
+			<input type="text" name="consigneeCompany">
+		</div>
+    <div>
+			<p>担当者名</p>
+			<input type="text" name="consigneeName">
+		</div>
+    <div>
+			<p>住所</p>
+			<input type="text" name="consigneeAddress">
+		</div>
+    <div>
+			<p>郵便番号</p>
+			<input type="text" name="consigneeZip">
+		</div>
+    <div>
+			<p>電話番号</p>
+			<input type="tel" name="consigneeTel">
+		</div>
+    <div>
+			<p>メールアドレス</p>
+			<input type="email" name="consigneeEmail">
+		</div>
+  </div>
+
+  <div>
+    <h2>出荷目的</h2>
+    <div>
+      <p>有償／無償</p>
+      <input type="radio" id="paid" name="purposeCost" value="paid">
+      <label for="paid">有償</label>
+      <input type="radio" id="free" name="purposeCost" value="free">
+      <label for="free">無償</label>
+    </div>
+    <div>
+      <p>贈り物／商品見本／その他</p>
+      <input type="radio" id="gift" name="purposeList" value="gift">
+      <label for="gift">贈り物</label>
+      <input type="radio" id="sample" name="purposeList" value="sample">
+      <label for="sample">商品見本</label>
+      <input type="radio" id="other" name="purposeList" value="other">
+      <label for="other">その他</label>
+    </div>
+  </div>
+
+  <div>
+    <h2>商品情報</h2>
+    <div>
+			<p>商品（品目）</p>
+			<input type="text" name="itemName">
+		</div>
+    <div>
+			<p>数量</p>
+			<input type="number" name="itemQuantity">
+		</div>
+    <div>
+			<p>重量（商品1個）</p>
+			<input type="number" name="itemWeight">
+		</div>
+    <div>
+			<p>価格（関税申告価格）</p>
+			<input type="number" name="itemPrice">
+		</div>
+    <div>
+			<p>HSコード</p>
+			<input type="tel" name="itemHscode">
+		</div>
+    <div>
+			<p>製造国</p>
+			<input type="text" name="itemCompany">
+		</div>
+  </div>
+
+  <div>
+    <h2>荷姿情報</h2>
+    <div>
+			<p>箱数</p>
+			<input type="number" name="packingName">
+		</div>
+    <div>
+			<p>サイズ</p>
+			<input type="number" name="packingSize">
+		</div>
+    <div>
+			<p>重量</p>
+			<input type="number" name="packingWeight">
+		</div>
+  </div>
 	</div>
 	<button type="submit">送信する</button>
 </form>
-
-
-<!-- 
-  
-  <form action="" method="post" name="form01" netlify-honeypot="bot-field" id="form" data-netlify="true">
-    
-    <p class="is-error-name"></p>
-    name : <input type="text" name="name"> 
-   
-    
-    <p class="is-error-gender"></p>gender : 
-    <input type="radio" name="gender" value="male">male
-    <input type="radio" name="gender" value="female">female
-   
-    
-    <p class="is-error-select"></p>select : 
-    <select name="select" id="select_id">
-        <option value="item1">item1</option>
-        <option value="item2">item2</option>
-        <option value="item3">item3</option>
-    </select><br>
-   
-    <input type="submit">
-  </form> -->
-
-
 
 </body>
 </html>
